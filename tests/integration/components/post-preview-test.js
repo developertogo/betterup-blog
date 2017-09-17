@@ -1,5 +1,6 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
+import testSelector from 'ember-test-selectors';
 
 moduleForComponent('post-preview', 'Integration | Component | post preview', {
   integration: true
@@ -24,6 +25,6 @@ test('it renders post title and truncated content', function(assert) {
   // test by accidentally providing a string shorter than the maxlength
   assert.ok(content.length > maxLengthWithEllipsis, 'content is originally longer than the max length');
 
-  assert.equal(this.$('.__header').text().trim(), title, 'component renders full title');
-  assert.equal(this.$('.__content-preview').text().trim().length, maxLengthWithEllipsis, 'content is truncated when rendered')
+  assert.equal(this.$(testSelector('post-preview-header')).text().trim(), title, 'component renders full title');
+  assert.equal(this.$(testSelector('post-preview-content')).text().trim().length, maxLengthWithEllipsis, 'content is truncated when rendered')
 });

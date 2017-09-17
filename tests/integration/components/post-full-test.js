@@ -1,5 +1,6 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
+import testSelector from 'ember-test-selectors';
 
 moduleForComponent('post-full', 'Integration | Component | post full', {
   integration: true
@@ -16,6 +17,6 @@ test('it renders the post', function(assert) {
   this.set('postStub', postStub);
   this.render(hbs`{{post-full post=postStub}}`);
 
-  assert.equal(this.$('.__header').text().trim(), title, 'title renders');
-  assert.equal(this.$('.__content').text().trim(), content, 'content renders');
+  assert.equal(this.$(testSelector('post-full-header')).text().trim(), title, 'title renders');
+  assert.equal(this.$(testSelector('post-full-content')).text().trim(), content, 'content renders');
 });
