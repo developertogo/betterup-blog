@@ -1,2 +1,5 @@
-@import "pod-styles";
+@import 'modules/variables';
+@import 'reset';
 @import 'modules/responsive-mixins';
+@import 'modules/material-icons';
+@import 'pod-styles';
