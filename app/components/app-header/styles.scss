@@ -11,7 +11,7 @@
     color: $red-A200;
     font-size: $font-size-x-large;
   }
-  .logo {
+  .__logo {
     display: flex;
     align-items: center;
 
@@ -20,7 +20,7 @@
       font-size: $font-size-xx-large;
     }
   }
-  .logo-label {
+  .__logo-label {
     display: none;
     font-family: 'Pacifico', cursive;
     color: $grey-400;

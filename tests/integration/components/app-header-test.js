@@ -8,5 +8,5 @@ moduleForComponent('app-header', 'Integration | Component | app header', {
 test('it renders', function(assert) {
   this.render(hbs`{{app-header}}`);
 
-  assert.ok(this.$('.logo').length, 'app-header component renders');
+  assert.ok(this.$('.__logo').length, 'app-header component renders');
 });

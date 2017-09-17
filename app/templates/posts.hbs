@@ -1,7 +1,3 @@
 {{#each model as |post|}}
-  <h1>{{post.title}}</h1>
-  <div style='margin: 20px 0;'>
-    {{post.content}}
-  </div>
-  <hr>
+  {{post-preview post=post}}
 {{/each}}
