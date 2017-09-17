@@ -1,3 +1,33 @@
 & {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: $grey-50;
+  border-bottom: 1px solid $grey-200;
+  margin-bottom: 20px;
 
+  .material-icons {
+    color: $red-A200;
+    font-size: $font-size-x-large;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+
+    .material-icons {
+      color: $grey-400;
+      font-size: $font-size-xx-large;
+    }
+  }
+  .logo-label {
+    display: none;
+    font-family: 'Pacifico', cursive;
+    color: $grey-400;
+    font-size: $font-size-x-large;
+
+    @include tablet-up {
+      display: inline;
+    }
+  }
 }
