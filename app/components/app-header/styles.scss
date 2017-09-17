@@ -1,15 +1,20 @@
 & {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 15px;
   background: $grey-50;
   border-bottom: 1px solid $grey-200;
-  margin-bottom: 20px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
 
   .material-icons {
     color: $red-A200;
     font-size: $font-size-x-large;
+  }
+  .__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   .__logo {
     display: flex;

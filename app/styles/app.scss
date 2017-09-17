@@ -23,3 +23,12 @@ p {
   font-size: $font-size-medium;
   color: $grey-600;
 }
+
+.component--limit-width {
+  max-width: $component-max-width;
+  margin: 0 auto;
+
+  &.application-container {
+    margin-top: 100px;
+  }
+}
