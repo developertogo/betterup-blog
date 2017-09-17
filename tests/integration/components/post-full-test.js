@@ -5,20 +5,17 @@ moduleForComponent('post-full', 'Integration | Component | post full', {
   integration: true
 });
 
-test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+test('it renders the post', function(assert) {
+  let title = 'Title';
+  let content = 'There\'s a snake in my boot!';
+  let postStub = {
+    id: 1,
+    title,
+    content
+  };
+  this.set('postStub', postStub);
+  this.render(hbs`{{post-full post=postStub}}`);
 
-  this.render(hbs`{{post-full}}`);
-
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#post-full}}
-      template block text
-    {{/post-full}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$('.__header').text().trim(), title, 'title renders');
+  assert.equal(this.$('.__content').text().trim(), content, 'content renders');
 });
