@@ -6,12 +6,11 @@ moduleForComponent('moment-time-ago', 'helper:moment-time-ago', {
   integration: true
 });
 
-// Replace this with your real tests.
-test('it renders', function(assert) {
-  this.set('inputValue', '1234');
+test('it renders converts a timestamp string into a readable days-ago format', function(assert) {
+  this.set('timestamp', '2017-08-31T04:03:18.700Z');
 
-  this.render(hbs`{{moment-time-ago inputValue}}`);
+  this.render(hbs`{{moment-time-ago timestamp}}`);
 
-  assert.equal(this.$().text().trim(), '1234');
+  assert.equal(this.$().text().trim(), '18 days ago');
 });
 

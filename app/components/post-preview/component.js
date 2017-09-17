@@ -7,7 +7,7 @@ export default Component.extend({
   routing: service('-routing'),
 
   previewText: computed('post.content', function() {
-    let content = get(this, 'post.content');
+    let content = get(this, 'post.content') || '';
     let maxLength = get(this, 'maxLength');
     return (content.length > maxLength) ? `${content.slice(0, maxLength)} ...` : content;
   }),

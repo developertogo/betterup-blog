@@ -1,6 +1,7 @@
 module.exports = {
   globals: {
     server: true,
+    moment: true
   },
   root: true,
   parserOptions: {
