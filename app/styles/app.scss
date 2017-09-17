@@ -3,3 +3,23 @@
 @import 'modules/responsive-mixins';
 @import 'modules/material-icons';
 @import 'pod-styles';
+
+// globals
+body {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+  line-height: 1.7em;
+}
+
+h1 {
+  font-size: $font-size-x-large;
+  color: $grey-700;
+  line-height: 1.2em;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+p {
+  font-size: $font-size-medium;
+  color: $grey-600;
+}

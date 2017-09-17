@@ -1,0 +1,21 @@
+& {
+  padding: 15px;
+  border-bottom: 1px solid $grey-200;
+
+  .__timestamp {
+    color: $green-A700;
+    font-weight: 400;
+    font-size: $font-size-regular;
+  }
+  .__header {
+    transition: color 600ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .__header {
+      color: $red-A200;
+    }
+  }
+}
