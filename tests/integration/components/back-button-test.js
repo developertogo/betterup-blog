@@ -1,24 +1,21 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
+import testSelector from 'ember-test-selectors';
 
 moduleForComponent('back-button', 'Integration | Component | back button', {
   integration: true
 });
 
-test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+test('it hides and shows the back button depending on which route you are on', function(assert) {
+  let postsIndex = 'posts.index';
+  let postsShow = 'posts.show';
 
-  this.render(hbs`{{back-button}}`);
+  this.set('currentPath', postsShow);
+  this.render(hbs`{{back-button currentPath=currentPath}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(this.$(testSelector('back-button')).length, 1, 'back button renders on a non-posts.index route');
 
-  // Template block usage:
-  this.render(hbs`
-    {{#back-button}}
-      template block text
-    {{/back-button}}
-  `);
+  this.set('currentPath', postsIndex);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$(testSelector('back-button')).length, 0, 'back button is hidden on the index route');
 });
