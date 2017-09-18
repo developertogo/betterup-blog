@@ -1,0 +1,9 @@
+{{#from-elsewhere name='modal' as |modal|}}
+  {{#liquid-bind modal containerless=true use='explode' as |currentModal|}}
+    <div class="rendered-modal">
+      {{component
+        currentModal.component
+        modal=currentModal}}
+    </div>
+  {{/liquid-bind}}
+{{/from-elsewhere}}

@@ -1,5 +1,13 @@
 {{app-header currentPath=currentPath}}
 
 <div class="component--limit-width application-container">
+  <button onclick={{action (mut openModalTest) true}}>
+    test modal
+  </button>
+
   {{outlet}}
 </div>
+
+{{betterup-modal isOpen=openModalTest modal=(hash component='test-component' close=(action (mut openModalTest)))}}
+
+{{betterup-modal/target}}
