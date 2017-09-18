@@ -7,11 +7,13 @@ export default Component.extend({
     this._super(...arguments);
 
     let isOpen = get(this, 'isOpen');
+    let $html = $('html');
+    let lockClass = '--scroll-locked';
 
     if (isOpen) {
-      $('html').addClass('--scroll-locked');
+      $html.addClass(lockClass);
     } else {
-      $('html').removeClass('--scroll-locked');
+      $html.removeClass(lockClass);
     }
   }
 });
