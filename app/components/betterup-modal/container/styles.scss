@@ -4,7 +4,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 60px 15px 15px;
+  padding: 15px;
   background-color: #ffffff;
   z-index: 2;
   display: flex;
@@ -13,6 +13,11 @@
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   transform: translate(0%, 100%);
   opacity: 0;
+
+  .__content {
+    margin-top: 45px;
+    overflow: scroll;
+  }
 
   &.--is-opened {
     transform: translate(0%, 0%);
