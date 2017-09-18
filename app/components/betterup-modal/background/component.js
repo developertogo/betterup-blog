@@ -1,8 +1,14 @@
 import Ember from 'ember';
 
-const { Component } = Ember;
+const { Component, run: { next } } = Ember;
 
 export default Component.extend({
+  didInsertElement() {
+    next(() => {
+      this.$().addClass('--is-opened');
+    });
+  },
+
   click(e) {
     e.preventDefault();
 

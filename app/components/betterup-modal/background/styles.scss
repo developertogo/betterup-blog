@@ -4,9 +4,15 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, .8);
+  background: #000000;
+  opacity: 0;
   z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: opacity 0.25s;
+
+  &.--is-opened {
+    opacity: 0.8;
+  }
 }

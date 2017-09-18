@@ -1,10 +1,6 @@
 {{#from-elsewhere name='modal' as |modal|}}
-  {{#liquid-bind modal containerless=true use='explode' as |currentModal|}}
-    <div class="rendered-modal">
-      {{component
-        currentModal.component
-        modalBackground=(component 'betterup-modal/background')
-        modal=currentModal}}
-    </div>
-  {{/liquid-bind}}
+  {{component
+    modal.component
+    modalBackground=(component 'betterup-modal/background')
+    modal=modal}}
 {{/from-elsewhere}}
