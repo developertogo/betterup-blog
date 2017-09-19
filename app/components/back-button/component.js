@@ -5,8 +5,8 @@ const { Component, get, computed, inject: { service } } = Ember;
 export default Component.extend({
   router: service(),
 
-  displayBackButton: computed('router.currentRouteName', function() {
-    return get(this, 'router.currentRouteName') !== 'posts.index';
+  displayBackButton: computed('currentPath', function() {
+    return get(this, 'currentPath') !== 'posts.index';
   }),
 
   click(e) {
