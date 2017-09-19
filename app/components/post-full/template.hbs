@@ -1,8 +1,9 @@
-<span class="__edit-icon" onclick={{action (mut postFormIsOpened)}} data-test-edit-post-button>
-  <i class="material-icons">mode_edit</i>
-</span>
 <h1 class="__header" data-test-post-full-header>
   {{post.title}}
+
+  <span class="__edit-icon" onclick={{action (mut postFormIsOpened)}} data-test-edit-post-button>
+    <i class="material-icons">mode_edit</i>
+  </span>
 </h1>
 <span class="__timestamp">
   {{moment-time-ago post.createdAt}}

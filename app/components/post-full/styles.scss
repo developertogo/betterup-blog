@@ -3,13 +3,11 @@
   position: relative;
 
   .__edit-icon {
-    position: absolute;
-    right: 15px;
-    top: -80px;
+    cursor: pointer;
 
     .material-icons {
       color: $red-A200;
-      font-size: $font-size-x-large;
+      font-size: $font-size-large;
     }
   }
   .__timestamp {
