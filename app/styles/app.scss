@@ -32,3 +32,10 @@ p {
     margin-top: 100px;
   }
 }
+
+.--scroll-locked {
+  overflow: hidden !important;
+  position: fixed !important;
+  width: 100vw;
+  height: 100vw;
+}
