@@ -1,7 +1,6 @@
 import { test } from 'qunit';
 import moduleForAcceptance from 'betterup-blog/tests/helpers/module-for-acceptance';
 import postsPage from 'betterup-blog/tests/pages/posts';
-import appHeaderComponent from 'betterup-blog/tests/pages/components/app-header';
 import postFormComponent from 'betterup-blog/tests/pages/components/modals/post-form';
 
 moduleForAcceptance('Acceptance | posts/user can add new post');
