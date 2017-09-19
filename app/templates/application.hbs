@@ -1,13 +1,11 @@
-{{app-header currentPath=currentPath}}
+{{app-header currentPath=currentPath openPostFormAction=(action (mut postFormIsOpened))}}
 
 <div class="component--limit-width application-container">
-  <button onclick={{action (mut openModalTest) true}}>
-    test modal
-  </button>
-
   {{outlet}}
 </div>
 
-{{betterup-modal isOpen=openModalTest modal=(hash component='test-modal' close=(action (mut openModalTest)))}}
+{{betterup-modal
+  isOpen=postFormIsOpened
+  modal=(hash component='modals/post-form' close=(action (mut postFormIsOpened)))}}
 
 {{betterup-modal/target}}

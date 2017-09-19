@@ -6,8 +6,7 @@ export default Component.extend({
   router: service(),
 
   displayBackButton: computed('currentPath', function() {
-    let path = get(this, 'currentPath');
-    return path !== 'posts.index';
+    return get(this, 'currentPath') !== 'posts.index';
   }),
 
   click(e) {
