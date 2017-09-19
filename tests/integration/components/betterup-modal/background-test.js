@@ -1,24 +1,23 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
+import testSelector from 'ember-test-selectors';
 
 moduleForComponent('betterup-modal/background', 'Integration | Component | betterup modal/background', {
   integration: true
 });
 
-test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+test('it calls a close action when clicked on', function(assert) {
+  assert.expect(2);
 
-  this.render(hbs`{{betterup-modal/background}}`);
+  this.set('closeAction', () => {
+    assert.ok(true, 'the close action is called when the background is clicked on');
+  });
 
-  assert.equal(this.$().text().trim(), '');
+  this.render(hbs`{{betterup-modal/background onClick=(action closeAction)}}`);
 
-  // Template block usage:
-  this.render(hbs`
-    {{#betterup-modal/background}}
-      template block text
-    {{/betterup-modal/background}}
-  `);
+  let $backgroundModal = this.$(testSelector('modal-background'));
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal($backgroundModal.length, 1, 'background is rendered');
+
+  $backgroundModal.click();
 });

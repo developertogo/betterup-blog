@@ -9,6 +9,8 @@ export default Component.extend({
     });
   },
 
+  'data-test-modal-background': true,
+
   click(e) {
     e.preventDefault();
 
