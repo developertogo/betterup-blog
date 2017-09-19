@@ -1,3 +1,6 @@
+<span class="__edit-icon" onclick={{action (mut postFormIsOpened)}} data-test-edit-post-button>
+  <i class="material-icons">mode_edit</i>
+</span>
 <h1 class="__header" data-test-post-full-header>
   {{post.title}}
 </h1>
@@ -7,3 +10,7 @@
 <p class="__content" data-test-post-full-content>
   {{post.content}}
 </p>
+
+{{betterup-modal
+  isOpen=postFormIsOpened
+  modal=(hash component='modals/post-form' editingModel=post close=(action (mut postFormIsOpened)))}}
