@@ -1,6 +1,6 @@
 import { test } from 'qunit';
 import moduleForAcceptance from 'betterup-blog/tests/helpers/module-for-acceptance';
-import testSelector from 'ember-test-selectors';
+import postsPage from 'betterup-blog/tests/pages/posts';
 
 moduleForAcceptance('Acceptance | posts/user can view posts');
 
@@ -10,5 +10,5 @@ test('user can view posts', async function(assert) {
   await visit('/');
 
   assert.equal(currentRouteName(), 'posts.index', 'landing page will redirect to the posts index');
-  assert.equal(find(testSelector('post-preview')).length, 10, 'posts are loaded');
+  assert.equal(postsPage.postPreviewCounts, 10, 'posts are loaded on posts index route');
 });
