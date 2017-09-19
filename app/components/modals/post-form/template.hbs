@@ -4,7 +4,7 @@
 
   {{#paper-form onSubmit=(action 'submitPostForm') as |form|}}
     <div class="layout-row">
-      {{form.input label="Title" value=postTitle onChange=(action (mut postTitle)) required=true}}
+      {{form.input label="Title" value=postTitle onChange=(action (mut postTitle)) required=true data-test-post-title-input=true}}
     </div>
     <div class="layout-row">
       {{paper-input
@@ -14,10 +14,11 @@
         passThru=(hash rows=5 maxRows=5)
         value=postContent
         required=true
+        data-test-post-content-input=true
         onChange=(action (mut postContent))}}
     </div>
     <div class="layout-row">
-      {{#form.submit-button disabled=form.isInvalid}}
+      {{#form.submit-button disabled=form.isInvalid data-test-post-form-submit=true}}
         Submit
       {{/form.submit-button}}
     </div>

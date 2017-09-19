@@ -1,24 +1,34 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
+import testSelector from 'ember-test-selectors';
+import Ember from 'ember';
 
 moduleForComponent('modals/post-form', 'Integration | Component | modals/post form', {
   integration: true
 });
 
 test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+  this.set('postFormIsOpened', true);
 
-  this.render(hbs`{{modals/post-form}}`);
-
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
   this.render(hbs`
-    {{#modals/post-form}}
-      template block text
-    {{/modals/post-form}}
+    {{betterup-modal
+      isOpen=postFormIsOpened
+      modal=(hash component='modals/post-form' close=(action (mut postFormIsOpened)))}}
+    {{betterup-modal/target}}
   `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$(testSelector('post-form')).length, 1, 'post form renders');
+});
+
+test('form submit is disabled by default when fields are empty', function(assert) {
+  this.set('postFormIsOpened', true);
+
+  this.render(hbs`
+    {{betterup-modal
+      isOpen=postFormIsOpened
+      modal=(hash component='modals/post-form' close=(action (mut postFormIsOpened)))}}
+    {{betterup-modal/target}}
+  `);
+
+  assert.equal(this.$(`${testSelector('post-form-submit')}[disabled]`).length, 1, 'form submit button is disabled');
 });

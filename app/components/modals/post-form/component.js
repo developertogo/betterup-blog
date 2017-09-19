@@ -6,6 +6,8 @@ export default Component.extend({
   store: service(),
   router: service(),
 
+  'data-test-post-form': true,
+
   actions: {
     submitPostForm() {
       let { postTitle, postContent } = this.getProperties('postTitle', 'postContent');
