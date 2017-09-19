@@ -1,0 +1,29 @@
+& {
+  md-input-container {
+    width: 100%;
+  }
+  md-input-container:not(.md-input-invalid).md-input-focused {
+    label {
+      color: rgba(0, 0, 0, 0.54) !important;
+    }
+    .md-input {
+      border-color: rgba(0, 0, 0, 0.12) !important;
+    }
+  }
+  .md-button {
+    color: #ffffff;
+    background: $green-A700;
+  }
+  .md-button.md-default-theme:not([disabled]) {
+    &:hover {
+      background-color: $green-600;
+    }
+    &.md-focused {
+      background: $green-A700;
+    }
+  }
+  .md-button.md-default-theme[disabled] {
+    background-color: $green-50;
+    color: #ffffff;
+  }
+}

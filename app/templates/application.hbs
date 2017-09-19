@@ -1,5 +1,11 @@
+{{app-header openPostFormAction=(action (mut postFormIsOpened))}}
+
 <div class="component--limit-width application-container">
   {{outlet}}
 </div>
+
+{{betterup-modal
+  isOpen=postFormIsOpened
+  modal=(hash component='modals/post-form' close=(action (mut postFormIsOpened)))}}
 
 {{betterup-modal/target}}

@@ -1,0 +1,26 @@
+{{betterup-modal/background onClick=(action modal.close)}}
+
+{{#betterup-modal/container close=(action modal.close)}}
+
+  {{#paper-form onSubmit=(action 'submitPostForm') as |form|}}
+    <div class="layout-row">
+      {{form.input label="Title" value=postTitle onChange=(action (mut postTitle)) required=true}}
+    </div>
+    <div class="layout-row">
+      {{paper-input
+        textarea=true
+        block=true
+        label="Content"
+        passThru=(hash rows=5 maxRows=5)
+        value=postContent
+        required=true
+        onChange=(action (mut postContent))}}
+    </div>
+    <div class="layout-row">
+      {{#form.submit-button disabled=form.isInvalid}}
+        Submit
+      {{/form.submit-button}}
+    </div>
+  {{/paper-form}}
+
+{{/betterup-modal/container}}

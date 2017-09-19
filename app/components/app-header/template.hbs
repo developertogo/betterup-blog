@@ -1,16 +1,16 @@
 <div class="__container component--limit-width">
-  {{back-button}}
+  <span class="__icon">
+    {{back-button}}
+  </span>
   <span class="__logo" data-test-header-logo>
     <i class="material-icons">insert_emoticon</i>
     <span class="__logo-label">Hooray!</span>
   </span>
-  {{#if displayEditIcon}}
-    <span>
-      <i class="material-icons">mode_edit</i>
-    </span>
-  {{else}}
-    <span>
-      <i class="material-icons">add_circle_outline</i>
-    </span>
-  {{/if}}
+  <span class="__icon">
+    {{#if displayAddIcon}}
+      <span onclick={{action openPostFormAction}}>
+        <i class="material-icons">add_circle_outline</i>
+      </span>
+    {{/if}}
+  </span>
 </div>

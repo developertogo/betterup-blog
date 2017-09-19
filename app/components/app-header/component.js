@@ -4,5 +4,5 @@ const { Component, computed: { equal }, inject: { service } } = Ember;
 
 export default Component.extend({
   router: service(),
-  displayEditIcon: equal('router.currentRouteName', 'posts.show')
+  displayAddIcon: equal('router.currentRouteName', 'posts.index')
 });

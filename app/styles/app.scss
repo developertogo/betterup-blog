@@ -3,6 +3,7 @@
 @import 'modules/responsive-mixins';
 @import 'modules/material-icons';
 @import 'pod-styles';
+@import 'ember-paper';
 
 // globals
 body {
@@ -27,10 +28,17 @@ p {
 .component--limit-width {
   max-width: $component-max-width;
   margin: 0 auto;
+}
 
-  &.application-container {
-    margin-top: 100px;
-  }
+.application-container {
+  overflow: scroll;
+  position: absolute;
+  top: 80px; // header height
+  bottom: 0;
+}
+
+html {
+  overflow: hidden;
 }
 
 .--scroll-locked {
