@@ -3,6 +3,7 @@
   background: $grey-50;
   border-bottom: 1px solid $grey-200;
   position: fixed;
+  z-index: 1;
   top: 0;
   right: 0;
   left: 0;
@@ -16,8 +17,9 @@
     justify-content: space-between;
     align-items: center;
   }
-  .__icon {
+  .__icon-btn {
     min-width: 40px;
+    cursor: pointer;
   }
   .__logo {
     display: flex;

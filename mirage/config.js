@@ -4,4 +4,5 @@ export default function() {
   this.get('/posts');
   this.post('/posts');
   this.get('/posts/:id');
+  this.patch('/posts/:id');
 }

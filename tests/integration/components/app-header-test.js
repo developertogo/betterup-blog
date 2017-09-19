@@ -7,7 +7,10 @@ moduleForComponent('app-header', 'Integration | Component | app header', {
 });
 
 test('it renders', function(assert) {
-  this.render(hbs`{{app-header}}`);
+  let testAction = () => {};
+  this.set('testAction', testAction);
+
+  this.render(hbs`{{app-header currentPath='' openPostFormAction=testAction}}`);
 
   assert.ok(this.$(testSelector('header-logo')).length, 'app-header component renders');
 });

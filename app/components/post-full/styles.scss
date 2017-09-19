@@ -1,6 +1,15 @@
 & {
   padding: 15px;
+  position: relative;
 
+  .__edit-icon {
+    cursor: pointer;
+
+    .material-icons {
+      color: $red-A200;
+      font-size: $font-size-large;
+    }
+  }
   .__timestamp {
     color: $green-A700;
     font-weight: 400;

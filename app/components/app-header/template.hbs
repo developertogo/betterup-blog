@@ -1,16 +1,14 @@
 <div class="__container component--limit-width">
-  <span class="__icon">
+  <span class="__icon-btn">
     {{back-button currentPath=currentPath}}
   </span>
   <span class="__logo" data-test-header-logo>
     <i class="material-icons">insert_emoticon</i>
     <span class="__logo-label">Hooray!</span>
   </span>
-  <span class="__icon">
-    {{#if displayAddIcon}}
-      <span onclick={{action openPostFormAction}} data-test-new-post-button>
-        <i class="material-icons">add_circle_outline</i>
-      </span>
-    {{/if}}
+  <span class="__icon-btn">
+    <span onclick={{action openPostFormAction}} data-test-new-post-button>
+      <i class="material-icons">add_circle_outline</i>
+    </span>
   </span>
 </div>

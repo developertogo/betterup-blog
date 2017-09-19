@@ -31,14 +31,8 @@ p {
 }
 
 .application-container {
-  overflow: scroll;
-  position: absolute;
-  top: 80px; // header height
-  bottom: 0;
-}
-
-html {
-  overflow: hidden;
+  padding-top: 100px;
+  max-height: 100vh;
 }
 
 .--scroll-locked {
