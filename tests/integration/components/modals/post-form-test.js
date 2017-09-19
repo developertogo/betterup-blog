@@ -1,7 +1,6 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 import testSelector from 'ember-test-selectors';
-import Ember from 'ember';
 
 moduleForComponent('modals/post-form', 'Integration | Component | modals/post form', {
   integration: true
