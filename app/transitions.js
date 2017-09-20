@@ -1,9 +1,8 @@
 export default function(){
-  // Add your transitions here, like:
-  //   this.transition(
-  //     this.fromRoute('people.index'),
-  //     this.toRoute('people.detail'),
-  //     this.use('toLeft'),
-  //     this.reverse('toRight')
-  //   );
+  this.transition(
+    this.fromRoute('posts.index'),
+    this.toRoute('posts.show'),
+    this.use('toLeft', { duration: 600, easing: [0.19, 1, 0.22, 1]}),
+    this.reverse('toRight', { duration: 600, easing: [0.19, 1, 0.22, 1]})
+  );
 }
