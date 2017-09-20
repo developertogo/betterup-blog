@@ -17,10 +17,16 @@
         data-test-post-content-input=true
         onChange=(action (mut postContent))}}
     </div>
-    <div class="layout-row">
-      {{#form.submit-button disabled=form.isInvalid data-test-post-form-submit=true}}
-        Submit
-      {{/form.submit-button}}
+    <div class="layout-row __submit-block">
+      {{#if saving}}
+        <div>
+          {{loading-indicator size='5px'}}
+        </div>
+      {{else}}
+        {{#form.submit-button disabled=disableSubmit data-test-post-form-submit=true}}
+          Submit
+        {{/form.submit-button}}
+      {{/if}}
     </div>
   {{/paper-form}}
 

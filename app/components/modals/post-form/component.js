@@ -1,10 +1,11 @@
 import Ember from 'ember';
 
-const { Component, inject: { service }, get } = Ember;
+const { Component, inject: { service }, get, set, computed } = Ember;
 
 export default Component.extend({
   store: service(),
   router: service(),
+  saving: false,
 
   'data-test-post-form': true,
 
@@ -23,16 +24,27 @@ export default Component.extend({
     }
   },
 
+  disableSubmit: computed('postTitle', 'postContent', 'saving', function() {
+    let {
+      postTitle, postContent, saving
+    } = this.getProperties('postTitle', 'postContent', 'saving');
+    return (!postTitle || !postContent) || saving;
+  }),
+
   actions: {
     submitPostForm() {
       let { postTitle, postContent } = this.getProperties('postTitle', 'postContent');
       let editingModel = get(this, 'modal.editingModel');
       let post = editingModel ? editingModel : get(this, 'store').createRecord('post');
+      set(this, 'saving', true);
 
       post.setProperties({ title: postTitle, content: postContent, createdAt: faker.date.past() });
       post.save().then((record) => {
+        set(this, 'saving', false);
         get(this, 'router').transitionTo('posts.show', record);
         get(this, 'modal.close')();
+      }, () => {
+        set(this, 'saving', false);
       });
     }
   }
