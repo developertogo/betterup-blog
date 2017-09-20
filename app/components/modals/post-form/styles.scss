@@ -1,4 +1,12 @@
 & {
+  .__submit-block {
+    min-height: 50px;
+
+    .__loader {
+      margin: 20px 0 0 50px;
+    }
+  }
+
   md-input-container {
     width: 100%;
   }
