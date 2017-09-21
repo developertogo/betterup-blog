@@ -9,3 +9,7 @@
   modal=(hash component='modals/post-form' close=(action (mut postFormIsOpened)))}}
 
 {{betterup-modal/target}}
+
+{{#each flashMessages.queue as |flash|}}
+  {{flash-message flash=flash}}
+{{/each}}

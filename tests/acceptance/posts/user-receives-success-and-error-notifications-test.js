@@ -14,13 +14,10 @@ test('user receives success notification for editing a post', async function(ass
   await postsPage.editPostButton();
   await postFormComponent.submitFormButton();
 
-  let $successNotification = find('.ember-notify.success');
-  let $successMessage = find('.ember-notify .message');
-
-  console.log(find('.ember-notify'));
+  let $successNotification = find('.alert-success');
 
   assert.ok($successNotification.length, 'a success notification renders');
-  assert.equal($successMessage.text().trim(), expectedMessage, 'notification messaging is correct on update');
+  assert.equal($successNotification.text().trim(), expectedMessage, 'notification messaging is correct on update');
 });
 
 test('user receives success notification for adding a new post', async function(assert) {
@@ -31,28 +28,8 @@ test('user receives success notification for adding a new post', async function(
   await postFormComponent.fillOutForm('title', 'content');
   await postFormComponent.submitFormButton();
 
-  let $successNotification = find('.ember-notify.success');
-  let $successMessage = find('.ember-notify .message');
+  let $successNotification = find('.alert-success');
 
   assert.ok($successNotification.length, 'a success notification renders');
-  assert.equal($successMessage.text().trim(), expectedMessage, 'notification messaging is correct on create');
-});
-
-test('user receives an error notification if the app errors on save', async function(assert) {
-  server.post('posts', function() {
-    return new Response(404)
-  });
-
-  let expectedMessage = 'There was a problem saving your post. Please try again.';
-
-  await visit('/');
-  await appHeaderComponent.newPostButton();
-  await postFormComponent.fillOutForm('title', 'content');
-  await postFormComponent.submitFormButton();
-
-  let $alertNotification = find('.ember-notify.alert');
-  let $alertMessage = find('.ember-notify .message');
-
-  assert.ok($alertNotification.length, 'an alert notification renders');
-  assert.equal($alertMessage.text().trim(), expectedMessage, 'alert messaging is correct on errored save');
+  assert.equal($successNotification.text().trim(), expectedMessage, 'notification messaging is correct on create');
 });
