@@ -1,5 +1,7 @@
 # betterup-blog
 
+![bb3](https://user-images.githubusercontent.com/2292367/30714387-94d70706-9ee0-11e7-9a49-b97cd420cd17.gif)
+
 Interview assignment from BetterUp. A small blog-like application for creating and editing blog posts.
 
 * [Viewing the project online](#viewonline)
