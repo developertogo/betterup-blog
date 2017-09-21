@@ -5,7 +5,6 @@ const { Component, inject: { service }, get, set, computed } = Ember;
 export default Component.extend({
   store: service(),
   router: service(),
-  notify: service(),
   saving: false,
 
   'data-test-post-form': true,
@@ -44,12 +43,12 @@ export default Component.extend({
       post.setProperties({ title: postTitle, content: postContent, createdAt: faker.date.past() });
       post.save().then((record) => {
         set(this, 'saving', false);
-        get(this, 'notify').success(successMessage);
+        // get(this, 'notify').success(successMessage);
         get(this, 'router').transitionTo('posts.show', record);
         get(this, 'modal.close')();
       }, () => {
         set(this, 'saving', false);
-        get(this, 'notify').alert('There was a problem saving your post. Please try again.');
+        // get(this, 'notify').alert('There was a problem saving your post. Please try again.');
       });
     }
   }
