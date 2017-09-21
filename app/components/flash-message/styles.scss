@@ -7,9 +7,16 @@
     padding: 15px;
     color: #ffffff;
     font-weight: 400;
+    animation-duration: 0.5s;
+    animation-delay: 0.2s; // prevent from animating at the same time modals are being closed/destroyed
+    animation-name: ENTER_BOTTOM;
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1); // easeOutQuint
+    animation-fill-mode: forwards;
+    transform: translate(110%, 120%);
 
     @include tablet-up {
-      right: initial;
+      left: initial;
+      animation-name: ENTER_RIGHT;
     }
   }
   &.alert-success {
@@ -17,5 +24,23 @@
   }
   &.alert-danger {
     background: $red-700;
+  }
+}
+
+@keyframes ENTER_RIGHT {
+  from {
+    transform: translate(110%, 0%);
+  }
+  to {
+    transform: translate(0%, 0%);
+  }
+}
+
+@keyframes ENTER_BOTTOM {
+  from {
+    transform: translate(0%, 120%);
+  }
+  to {
+    transform: translate(0%, 0%);
   }
 }
